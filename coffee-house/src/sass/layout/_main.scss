@@ -1,0 +1,11 @@
+main {
+    flex: 1 0 auto;
+    gap: 100px;
+    margin-bottom: 100px;
+
+    @include flex($direction: column);
+
+    @include media-small-tablet{
+      margin-bottom: 94px;
+    }
+  }

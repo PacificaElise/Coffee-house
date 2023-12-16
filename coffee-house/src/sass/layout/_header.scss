@@ -1,0 +1,143 @@
+@import "../abstract/constants";
+
+header {
+  flex: 0 0 auto;
+  height: 60px;
+  margin-bottom: 1.25em;
+}
+
+.header__wrapper {
+  @include font($weight: 600, $lheight: 1.25);
+  @include flex($content: space-between, $align: center);
+}
+
+.header__logo {
+  width: 100px;
+  height: 60px;
+  background-image: url(../../src/assets/logo.svg);
+}
+
+.header__nav {
+  gap: 366px;
+
+  &-links {
+    width: 456px;
+    @include flex($content: space-between);
+    gap: 40px;
+
+    @include media-medium-tablet {
+      @include flex($direction: column, $content: flex-start, $align: center);
+      gap: 60px;
+      width: 100%;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include flex($content: space-between);
+
+  @include media-small-laptop{
+    gap: 250px;
+  }
+
+  @include media-big-tablet{
+    gap: 100px;
+  }
+
+  @include media-tablet{
+    gap: 40px;
+  }
+
+  @include media-medium-tablet{
+    min-width: 100%;
+    height: 924px;
+    max-height: 100%;
+    padding: 82px 40px; 
+    background-color: $background-body;
+    @include flex($direction: column, $content: flex-start, $align: center);
+    gap: 100px;
+    position: fixed;
+    top: 75px;
+    right: 0;
+    z-index: 5;
+    @include font($size: 32px, $weight: 600, $lheight: 1.25);
+    transform: translateX(150%);
+    transition: transform 0.5s linear;
+    overflow-y: auto;
+  }
+}
+
+.header__menu {
+  gap: 0.5em;
+  @include flex($content: start, $align: center);
+
+  span {
+    color: $color-text;
+    @include font($weight: 600);  
+    @include media-medium-tablet {
+      @include font($size: 32px, $weight: 600);
+    }
+  }
+}
+
+.header__coffee-cup {
+  width: 20px;
+  height: 20px;
+
+  @include media-medium-tablet{
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.burger {
+  display: none;
+  border-radius: 50%;
+  border: 1.5px solid $color-text;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  cursor: pointer;
+
+  @include media-medium-tablet {
+    display: block; 
+  }
+}
+
+.burger__line {
+  display: block;  
+  width: 18px;
+  height: 2px;
+  background-color: $color-text;
+  position: absolute;
+  @extend %transition;
+
+  &:first-child {
+    top: 16px;
+    left: 12px;
+  }
+
+  &:last-child {
+    bottom: 16px;
+    left: 12px;
+  }
+}
+
+.close {
+  &:first-child {
+    transform: translate(0%, 170%)  rotate(45deg);
+  }
+  &:last-child {
+    transform: translate(0%, -150%) rotate(-45deg);
+  }
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.open, .close {  
+  @extend %transition;
+}

@@ -1,0 +1,45 @@
+@import "./constants";
+
+@mixin font($size: 16px, $weight: 400, $lheight: 1.5, $style: normal) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lheight;
+    font-style: $style;
+}
+
+@mixin flex($display: flex, $direction: row, $content: flex-start, $align: stretch) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $align;
+}
+
+@mixin media-laptop {
+    @media only screen and (max-width: $laptop-width) { @content; }
+}
+
+@mixin media-small-laptop {
+    @media only screen and (max-width: $small-laptop-width) { @content; }
+}
+
+@mixin media-big-tablet {
+    @media only screen and (max-width: $big-tablet-width) { @content; }
+}
+
+@mixin media-tablet {
+    @media only screen and (max-width: $tablet-width) { @content; }
+}
+
+@mixin media-medium-tablet {
+    @media only screen and (max-width: $medium-tablet-width) { @content; }
+}
+
+@mixin media-small-tablet {
+    @media only screen and(max-width: $small-tablet-width) { @content; }
+}
+
+@mixin media-mobile {
+    @media only screen and (max-width: $mobile-width) { @content; }
+}
+
+

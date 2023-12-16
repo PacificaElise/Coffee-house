@@ -1,0 +1,31 @@
+@import "../abstract/constants";
+@import "../abstract/placeholder";
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.link {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: $color-text;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+}
+
+.link::before {
+  @extend %transition;
+}
+
+

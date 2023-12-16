@@ -1,0 +1,18 @@
+%transition {
+  transition: all .5s ease-in;
+}
+
+%font-family {
+  font-family: 'Inter', Verdana, Tahoma, sans-serif;
+}
+
+%btn {
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  border-radius: 100px;
+  border: 1px solid $border-light;
+  cursor: pointer;
+  color: $color-text;
+  @include font($weight: 600);
+  @include flex($align: center);
+  gap: 0.5rem;
+}

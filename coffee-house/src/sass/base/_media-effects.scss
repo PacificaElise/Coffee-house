@@ -1,0 +1,65 @@
+@media (hover: hover){ 
+    .link:hover::before {
+      width: 100%;
+      opacity: 1;
+    } 
+
+    .modal__item-size:hover, .modal__item-add:hover, .menu__btn:hover, .modal__close-btn:hover {
+      background: $background-container;
+      color: $text-light;
+    }
+    
+    .modal__item-size:hover .modal__item-icon, .modal__item-add:hover .modal__item-icon, .menu__btn:hover .menu__btn-img {
+      background: $background-body;
+    }
+
+    .footer__btn:hover {
+      background:$text-light;
+    }
+  
+    .footer__btn:hover .footer__icon {
+      stroke: $background-container;
+    }
+  
+    .menu__item:hover img, .about__gallery img:hover {
+      transform: scale(1);
+    }
+  
+    .more-btn:hover {
+      fill: $background-container;
+      cursor: pointer;
+    }
+  
+    .more-btn:hover .more-btn-rect, .favorite__btn:hover .arrow {
+      stroke: $background-body;
+    }
+
+    .enjoy__btn:hover .enjoy__btn-menu {
+      transform: translate(0px);
+    }
+    
+    .enjoy__btn:hover .coffee-cup {
+      opacity: 1;
+    }
+   
+    .favorite__btn:hover, .mobile__btn:hover {
+      background-color: $background-container;
+    }
+    
+    .mobile__btn:hover .mobile__icon {
+      fill: $text-light;
+    }
+  
+    .mobile__btn:hover .mobile__btn-text span {
+      color: $text-light;
+    }
+  } 
+  
+
+  @media (hover: none) {
+    .link:active, .modal__item-size:active, .modal__item-add:active, .footer__btn:active, .menu__item:active, .menu__btn:active, .more-btn:active, .mobile__btn:active, .enjoy__btn:active, .favorite__btn:active, .modal__close-btn {
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+

@@ -1,0 +1,127 @@
+@import "../abstract/constants";
+
+.footer__btn, .footer__btn:hover, .footer__icon,  .footer__btn:hover .footer__icon {
+  @extend %transition;  
+}
+
+footer {
+  flex: 0 0 auto;
+}
+
+.footer__container {
+  gap: 100px;
+  border-radius: 40px;
+  background: $background-container;
+  padding: 100px;
+
+  @include flex();
+
+  @include media-big-tablet{
+    @include flex($direction: column, $align: flex-start);
+    padding: 6.25rem 3.75rem;
+  }
+
+  @include media-small-tablet{
+    padding: 3.75rem 1rem;
+    gap:40px;
+  }
+}
+
+.footer__desc {
+  max-height: 15.625rem;
+  max-width: 45.69%;
+
+  @include media-laptop{
+    max-height: 14rem;
+  }
+
+  @include media-big-tablet{
+    max-width: 80%;
+  }
+
+  @include media-tablet{
+    max-width: 100%;
+    max-height: 15.625rem;
+  }
+
+  h2 {
+    margin-bottom: 2.5rem;
+    color: $text-light;
+
+    @include media-laptop{
+      margin-bottom: 1.5rem;
+    }
+
+    @include media-big-tablet{
+      margin-bottom: 2.5rem;
+    }
+
+    @include media-small-tablet{
+      max-width: 100%;
+    }
+  }
+}
+
+.footer__panel-btns {
+  gap: 12px;
+  @include flex();
+
+  .footer__btn {
+    display: block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 1.125rem;
+    border-radius: 100px;
+    border: 1px solid $border-light;
+  }
+}
+
+.footer__contacts {
+  max-height: 15.625rem;
+  padding: 32px 0px;
+
+  @include media-tablet{
+    padding: 0px;
+  }
+}
+
+.contacts__container {
+  @include media-small-tablet{
+    height: 7.25rem;
+  }
+
+  a {
+    display: block;
+    width: max-content;
+    margin-bottom: 1rem;
+    color: $text-light;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &::before {
+      background-color: $text-light;
+    }
+
+    & span {
+      color: inherit;
+
+      @include font($weight:600, $lheight:1.5);
+    }
+  }
+}
+
+.contacts__title {
+  margin-bottom: 2.5rem;
+  text-align: start;
+  color: $text-light;
+
+  @include media-small-tablet{
+    margin-bottom: 2.75rem;
+  }
+}
+
+
+    

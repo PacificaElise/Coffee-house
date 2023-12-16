@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "../abstract/constants";
+@import "../abstract/mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-feature-settings: 'clig' off, 'liga' off;
+    color: $color-text;
+    @extend %font-family;
+  }
+  
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+}
+
+  ::-webkit-scrollbar-track {
+      background-color: $border-light;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  html {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: $background-body;
+    @include font();
+    animation-name: appear;
+    animation-duration: 1.5s;
+    scrollbar-gutter: stable;
+    overscroll-behavior: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 0;
+  }
+  
+  h2 {
+    @include font(3.75rem, 600, 1.25);
+    @include media-small-tablet{
+      @include font(2rem, 600, 1.25);
+    }
+  }
+  
+  h3 {
+    text-align: center;
+    
+    @include font(1.5rem, 600, 1.25)
+
+  }
+  
+  span {
+    color: $text-accent;
+    font-style: italic;
+  }
+

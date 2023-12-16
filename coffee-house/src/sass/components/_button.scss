@@ -1,0 +1,10 @@
+@import "../abstract/constants";
+
+button,
+.button {
+    border: none;
+    background-color: $background-body;
+    cursor: pointer;
+
+    @include font($weight:600)
+  }
